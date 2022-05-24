@@ -25,6 +25,11 @@ public class PersonaController {
     public List<Persona> getPersona() {
         return ipersonaService.getPersona();
     }
+    
+    @GetMapping("/personas/traer/perfil")
+    public Persona findPersona(){
+        return ipersonaService.findPersona((long)1);
+    }
 
     @PostMapping("/personas/crear")
     public String crearPersona(@RequestBody Persona persona) {
